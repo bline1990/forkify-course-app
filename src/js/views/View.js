@@ -17,7 +17,7 @@ export default class View {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
-    const markup = this.generateMarkup(data);
+    const markup = this._generateMarkup(data);
 
     if (!render) return markup;
 
@@ -27,7 +27,7 @@ export default class View {
 
   update(data) {
     this._data = data;
-    const newMarkup = this.generateMarkup();
+    const newMarkup = this._generateMarkup(data);
 
     const newDOM = document.createRange().createContextualFragment(newMarkup);
     const newElements = Array.from(newDOM.querySelectorAll('*'));
