@@ -31,7 +31,8 @@ const createRecipeObject = function (data) {
 
 export const loadRecipe = async function (id) {
   try {
-    const data = await getJSON(`${API_URL}/${id}?key=${KEY}`);
+    //https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcb34
+    const data = await getJSON(`${API_URL}`); // ${API_URL}/${id}?key=${KEY}
     state.recipe = createRecipeObject(data);
 
     if (state.bookmarks.some(bookmark => bookmark.id === id))
