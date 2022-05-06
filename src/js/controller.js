@@ -14,6 +14,7 @@ import { async } from 'regenerator-runtime';
 const controlRecipes = async function () {
   try {
     const id = window.location.pathname.slice(1);
+    console.log(id);
 
     if (!id) return;
     recipeView.renderSpinner();
