@@ -14,10 +14,11 @@ export default class View {
    */
   render(data, render = true) {
     this._data = data;
+
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
-    const markup = this._generateMarkup(data);
+    const markup = this._generateMarkup();
 
     if (!render) return markup;
 
@@ -27,7 +28,7 @@ export default class View {
 
   update(data) {
     this._data = data;
-    const newMarkup = this._generateMarkup(data);
+    const newMarkup = this._generateMarkup();
 
     const newDOM = document.createRange().createContextualFragment(newMarkup);
     const newElements = Array.from(newDOM.querySelectorAll('*'));
@@ -54,7 +55,7 @@ export default class View {
     });
   }
 
-  clear() {
+  _clear() {
     this._parentElement.innerHTML = '';
   }
 
