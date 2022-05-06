@@ -13,10 +13,10 @@ export default class View {
    * @todo Finish implementation
    */
   render(data, render = true) {
+    this._data = data;
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
-    this._data = data;
     const markup = this.generateMarkup(data);
 
     if (!render) return markup;
