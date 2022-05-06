@@ -14,11 +14,10 @@ export default class View {
    */
   render(data, render = true) {
     this._data = data;
+    const markup = this._generateMarkup();
 
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
-
-    const markup = this._generateMarkup();
 
     if (!render) return markup;
 
