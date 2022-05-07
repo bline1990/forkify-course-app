@@ -50,11 +50,7 @@
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
       padding: 1.3rem 2rem;
-      background-image: linear-gradient(
-        to right bottom,
-        $color-grad-1,
-        $color-grad-2
-      );
+      background-image: #9eb0b1;
     }
 
     @media only screen and (max-width: $bp-medium) {
@@ -84,7 +80,7 @@
   &__info-icon {
     height: 2.35rem;
     width: 2.35rem;
-    fill: $color-primary;
+    fill: #cf3382;
     margin-right: 1.15rem;
   }
 
